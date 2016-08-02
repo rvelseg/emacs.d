@@ -596,7 +596,7 @@ https://oleksandrmanzyuk.wordpress.com/2011/10/23/a-persistent-command-history-i
        (call-process "okular" nil 0 nil fpath)))
  #+end_src
 
- URL field
+ pdf file field
  #+begin_src emacs-lisp
    (setq bibtex-completion-pdf-field "File")
  #+end_src
