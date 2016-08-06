@@ -824,6 +824,13 @@ TODO: configure and use this
  (winner-mode 1)
  #+end_src
 
+** Tramp
+
+Default method, ssh is faster than scp, [[https://www.emacswiki.org/emacs/TrampMode][ref]].
+#+begin_src emacs-lisp
+  (setq tramp-default-method "ssh")
+#+end_src
+
 * Appeareance
   :PROPERTIES:
   :ID:       2e13bb68-c362-45cb-ba19-ef6fc1b962ac
