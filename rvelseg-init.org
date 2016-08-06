@@ -322,6 +322,11 @@ Highlight white space
   (setq smerge-refine-ignore-whitespace nil)
 #+end_src
 
+Highlight differences in hunks
+#+begin_src emacs-lisp
+  (setq magit-diff-refine-hunk 'all)
+#+end_src
+
 * Hyde
   :PROPERTIES:
   :ID:       bb8b34aa-b49e-4699-8d07-b6ba40f3eb57
