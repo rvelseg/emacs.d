@@ -1236,6 +1236,10 @@ Export with bibtex
  (require 'ox-bibtex)
 #+end_src
 
+Hide markup elements, [[http://stackoverflow.com/questions/10969617/hiding-markup-elements-in-org-mode][ref]].
+#+begin_src emacs-lisp
+  (setq org-hide-emphasis-markers t)
+#+end_src
 
 ** Markdown mode
    :PROPERTIES:
