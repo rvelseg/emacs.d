@@ -438,10 +438,11 @@ There is a problem with tramp, it could slow down the startup, [[http://stackove
  From Sacha Chua
  #+begin_src emacs-lisp
   (setq backup-directory-alist '(("." . "~/.emacs.d/history/backups")))
-  (setq delete-old-versions -1)
-  (setq version-control t)
-  (setq vc-make-backup-files t)
+  (setq delete-old-versions -1)      ;; Don't
+  (setq version-control t)           ;; Number unlimited backups
+  (setq vc-make-backup-files t)      ;; Do backups for VC registered files
   (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/history/auto-save-list/" t)))
+  (setq auto-save-list-file-prefix "~/.emacs.d/history/auto-save-list/.saves-")
  #+end_src
 
 ** Persistent command history in comint shells
