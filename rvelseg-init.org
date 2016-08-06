@@ -419,12 +419,17 @@ Then, this is disabled.
    :PROPERTIES:
    :ID:       b07996e0-3cde-4d5e-b168-dc40bab3863e
    :END:
+
+If you are going change the =recentf-save-file=, do it before enabling the mode, [[https://www.reddit.com/r/emacs/comments/2bxmc5/recentf_overwriting_recentflist/][ref]].
+There is a problem with tramp, it could slow down the startup, [[http://stackoverflow.com/questions/880625/stop-tramp-mode-running-on-emacs-startup][ref]].
  #+begin_src emacs-lisp
    (require 'recentf)
-   (recentf-mode 1)
-   (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-   (setq recentf-save-file "~/.emacs.d/history/recentf")
+   (setq recentf-save-file "~/.emacs.d/history/recentf")   ;; custom list file location
+   (setq recentf-auto-cleanup 'never)                      ;; patch for tramp at startup
+   (run-at-time nil (* 5 60) 'recentf-save-list)           ;; save recent file list regularly
+   (recentf-mode 1)                                        ;; activate
  #+end_src
+
 ** Backups
    :PROPERTIES:
    :ID:       3c612924-e1d3-4c61-8a30-24dc173a5d19
