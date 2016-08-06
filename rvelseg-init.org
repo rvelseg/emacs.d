@@ -682,15 +682,24 @@ By now, disabled. I find myself too often using =emacs --no-desktop= to have a f
           (mapc 'find-file fn-list)))))
  #+end_src
 
- Default shell commands, see openwith as well.
- https://emacs.stackexchange.com/questions/3698
+ Default shell commands, [[https://emacs.stackexchange.com/questions/3698][ref]]. This depends on =dired-x=. See =openwith= as well.
  #+begin_src emacs-lisp
    (setq dired-guess-shell-alist-user
-         '(("\\.e?ps$" "okular &" "evince &")
-           ("\\.chm$" "xchm &")
+         '(("\\.e?ps$" "okular" "evince")
+           ("\\.chm$" "xchm")
+           ("\\.docx?$" "libreoffice")
+           ("\\.xslx?$" "libreoffice")
+           ("\\.flv$" "mplayer" "totem")
+           ("\\.mov$" "mplayer" "totem")
+           ("\\.3gp$" "mplayer" "totem")
+           ("\\.avi$" "mplayer" "totem")
+           ("\\.png$" "eog")
+           ("\\.jpg$" "eog")
+           ("\\.JPG$" "eog")
+           ("\\.pptx?$" "libreoffice")
            ("\\.rar$" "unrar x")
-           ("\\.pdf$" "okular &" "evince &")
-           ("\\.djvu$" "okular &" "evince &")))
+           ("\\.pdf$" "okular" "evince")
+           ("\\.djvu$" "okular" "evince")))
  #+end_src
 
  Create an empty file
@@ -740,7 +749,7 @@ Act always recursively
    :ID:       8c28b9ac-0301-4b7d-bc15-e3401ccb3394
    :END:
 
-Associations
+By now, load associations, but disabled by default.
 #+begin_src emacs-lisp
   (when (require 'openwith nil 'noerror)
     (setq openwith-associations
@@ -769,8 +778,12 @@ Associations
                  "okular"
                  '(file))
            ))
-    (openwith-mode 1))
+    (openwith-mode -1)) ;; Disabled by default
 #+end_src
+Issues:
+- TODO: fix file paths when in dired over tramp.
+- TODO: fix conflict of file copy/rename when using helm.
+- TODO: disable for =org mode= files, it conflics particularly with =epresent=.
 
 ** Web browsing with eww
    :PROPERTIES:
