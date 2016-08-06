@@ -1,5 +1,6 @@
 #+TITLE: rvelseg emacs init file
 #+PROPERTY: header-args    :tangle yes :comments link
+#+INFOJS_OPT: view:content toc:nil
 
 * Personal information
   :PROPERTIES:
