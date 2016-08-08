@@ -1241,6 +1241,14 @@ Hide markup elements, [[http://stackoverflow.com/questions/10969617/hiding-marku
   (setq org-hide-emphasis-markers t)
 #+end_src
 
+
+** Text mode
+
+   Visual line mode
+   #+begin_src emacs-lisp
+     (add-hook 'text-mode-hook 'visual-line-mode)
+   #+end_src
+
 ** Markdown mode
    :PROPERTIES:
    :ID:       cdec4fbd-282b-47e1-a98d-c9521f7576fa
