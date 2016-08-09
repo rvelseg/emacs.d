@@ -701,6 +701,11 @@ By now, disabled. I find myself too often using =emacs --no-desktop= to have a f
            ("\\.pdf$" "okular" "evince")
            ("\\.djvu$" "okular" "evince")))
  #+end_src
+Issues:
+- When in a remote server, using TRAMP
+  - this commands doesn't behave in a DWIM way, the process is executed in the remote machine, and fails because of the lack of an X server through TRAMP. What I would like is that the command
+  - if a process has been started with =!= or with =&=, even on a local file, the execution of other precesses (on remote systems) is locked, emacs gives you the option to kill the other processs, but not to create a new buffer with a new process.
+
 
  Create an empty file
  http://stackoverflow.com/questions/2592095
