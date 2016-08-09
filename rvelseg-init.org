@@ -1246,6 +1246,11 @@ Hide markup elements, [[http://stackoverflow.com/questions/10969617/hiding-marku
   (setq org-hide-emphasis-markers t)
 #+end_src
 
+Highlight code, [[http://stackoverflow.com/questions/17239273][ref]].
+#+begin_src emacs-lisp
+  (setq org-src-fontify-natively t)
+  (setq org-highlight-latex-and-related '(latex script entities))
+#+end_src
 
 ** Text mode
 
