@@ -628,13 +628,31 @@ By now, disabled. I find myself too often using =emacs --no-desktop= to have a f
 
  #+begin_src emacs-lisp
    (require 'projectile)
-   (require 'helm-projectile)
    (projectile-global-mode)
- ;; (setq projectile-switch-project-action 'projectile-dired)
- ;; (persp-mode)
- ;; (require 'persp-projectile)
- ;; (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
+   (setq projectile-file-exists-remote-cache-expire nil)
+   ;; (setq projectile-switch-project-action 'projectile-dired)
+   ;; (persp-mode)
+   ;; (require 'persp-projectile)
+   ;; (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
+   (require 'helm-projectile)
+   (helm-projectile-on)
  #+end_src
+
+The following doesn't work. I don't know why, I loaded the key bindings with =helm-projectile-on= above.
+#+begin_src emacs-lisp
+  ;; (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
+#+end_src
+
+Switch between org and pdf files
+#+begin_src emacs-lisp
+  (add-to-list 'projectile-other-file-alist '("org" "pdf"))
+  (add-to-list 'projectile-other-file-alist '("pdf" "org"))
+#+end_src
+
+Don't bookmark remote projects, from [[https://github.com/martinp/emacs.d][martinp]]
+#+begin_src emacs-lisp
+  (setq projectile-ignored-project-function 'file-remote-p)
+#+end_src
 
 ** Neotree
    :PROPERTIES:
