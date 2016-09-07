@@ -216,13 +216,16 @@ Highlight parens
 
 Scroll buffer line by line
 #+begin_src emacs-lisp
-  (fset 'custom-down-one-line
-     "\C-u1\C-v")
-  (global-set-key (kbd "M-<down>") 'custom-down-one-line)
-  (fset 'custom-up-one-line
-     "\C-u1\M-v")
-  (global-set-key (kbd "M-<up>") 'custom-up-one-line)
+  ;; (fset 'custom-down-one-line
+  ;;    "\C-u1\C-v")
+  ;; (global-set-key (kbd "M-<down>") 'custom-down-one-line)
+  ;; (fset 'custom-up-one-line
+  ;;    "\C-u1\M-v")
+  ;; (global-set-key (kbd "M-<up>") 'custom-up-one-line)
 #+end_src
+issues:
+- collision with org mode move subtree, using smoth-scrolling instead.
+
 
 ** Unfill paragraph
    :PROPERTIES:
@@ -1091,6 +1094,13 @@ Default method, ssh is faster than scp, [[https://www.emacswiki.org/emacs/TrampM
    ;;
    (define-key ctl-x-4-map "t" 'toggle-window-split)
  #+end_src
+
+** Smoth scrolling
+
+#+begin_src emacs-lisp
+  (require 'smooth-scrolling)
+  (smooth-scrolling-mode 1)
+#+end_src
 
 * Writing
   :PROPERTIES:
