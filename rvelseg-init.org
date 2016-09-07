@@ -17,8 +17,12 @@
    :ID:       2c6a7675-f29b-4e9f-9b32-9446142645d9
    :END:
 
+Load only if the file is there. Sincie this init file is distributed without the sensible information, it is likely that this file is not readable.
 #+begin_src emacs-lisp
-  (load "~/.emacs.d/secrets.el")
+  (let ((sesible-info-file "~/.emacs.d/secrets.el"))
+    (if (file-readable-p sesible-info-file)
+      (load sesible-info-file)
+      (message "Sensible info not loaded. File not readable.")))
 #+end_src
 
 * First things first
