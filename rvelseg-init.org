@@ -112,6 +112,11 @@ Start an emacs server if not already started, [[http://stackoverflow.com/questio
   :ID:       34f4ad1f-25bd-4317-9883-6bf5a4fc4c49
   :END:
 
+No blinking
+#+begin_src emacs-lisp
+  (blink-cursor-mode 0)
+#+end_src
+
 No toolbar
 #+begin_src emacs-lisp
   (tool-bar-mode -1)
