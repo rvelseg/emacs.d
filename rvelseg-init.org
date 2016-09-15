@@ -114,7 +114,7 @@ Start an emacs server if not already started, [[http://stackoverflow.com/questio
 
 No explanations in scratch buffer, [[http://stackoverflow.com/questions/1498258][ref]].
 #+begin_src emacs-lisp
-  (setq initial-scratch-message ";; Sctarch buffer")
+  (setq initial-scratch-message ";; Scratch buffer")
 #+end_src
 
 No blinking
