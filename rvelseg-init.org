@@ -1114,7 +1114,7 @@ Default method, ssh is faster than scp, [[https://www.emacswiki.org/emacs/TrampM
   (smooth-scrolling-mode 1)
 #+end_src
 
-* Writing
+* Writing and coding
   :PROPERTIES:
   :ID:       5d4d411e-998c-4fb5-b0ba-20e5bd3152a1
   :END:
@@ -1325,6 +1325,14 @@ Highlight code, [[http://stackoverflow.com/questions/17239273][ref]].
  #+begin_src emacs-lisp
    (add-hook 'markdown-mode-hook 'visual-line-mode)
  #+end_src
+
+** octave
+
+ File extension association
+ #+begin_src emacs-lisp
+ (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+ #+end_src
+
 
 * Drawing
 
