@@ -75,8 +75,9 @@ Define repos
 
 And, initialize. This will also change the value of =load-path=, then it is good to have it at the beginning of the init file.
 #+begin_src emacs-lisp
-   (package-initialize)
+;;   (package-initialize)
 #+end_src
+I disabled this line because of the automatically added =(package-initialize)=, by emacs 25, at the begining of my =init.el=. It seems to be really important to run this at the very beginning of the init file.
 
 QnD patch, the wrong version of org was been loaded
 #+begin_src emacs-lisp
