@@ -24,3 +24,5 @@ bookmarks
 **/.svn/
 **/gnowsys-mode/
 /rvelseg-init.el
+/rvelseg-init.html
+/network-security.data
