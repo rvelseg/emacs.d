@@ -232,6 +232,11 @@ Scroll buffer line by line
 issues:
 - collision with org mode move subtree, using smoth-scrolling instead.
 
+Enable some commands disabled by default
+#+begin_src emacs-lisp
+  (put 'downcase-region 'disabled nil)
+#+end_src
+I acctually move here the code that emacs automatically writes in my =init.el= when I answer yes to the question to enable such commands.
 
 ** Unfill paragraph
    :PROPERTIES:
