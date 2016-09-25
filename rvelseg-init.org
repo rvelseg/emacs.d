@@ -1297,6 +1297,15 @@ Export with bibtex
  (require 'ox-bibtex)
 #+end_src
 
+Skip confirmation when evaluating code blocks during a presentation, and some configuration on scaling to fit my screen.
+#+begin_src emacs-lisp
+    (require 'epresent)
+    (require 'ob-sh)
+    (add-hook 'epresent-start-presentation-hook
+              (lambda () (progn (setq org-confirm-babel-evaluate nil)
+                                (setq org-format-latex-options '(:foreground default :background default :scale 4.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))))))
+#+end_src
+
 Hide markup elements, [[http://stackoverflow.com/questions/10969617/hiding-markup-elements-in-org-mode][ref]].
 #+begin_src emacs-lisp
   (setq org-hide-emphasis-markers t)
