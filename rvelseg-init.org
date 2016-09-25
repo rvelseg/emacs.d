@@ -1231,10 +1231,11 @@ Load
  (add-hook 'org-mode-hook 'my-bindkey-move-one-line)
  #+end_src
 
- file extension association
+ File extension association
  #+begin_src emacs-lisp
  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
  #+end_src
+ This has trouble when file variables declare minor modes, like reftex.
 
  Personal org files, and capture
  #+begin_src emacs-lisp
