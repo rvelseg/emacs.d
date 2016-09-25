@@ -1254,17 +1254,20 @@ Load
                )))
  #+end_src
 
- Create IDs, http://stackoverflow.com/questions/13340616/, the idea here is to be able to describe code issues in org files, and reference the issue descrition in the git commit messages.
+ Create IDs, [[http://stackoverflow.com/questions/13340616/][ref]], the idea here is to be able to describe code issues in org files, and reference the issue description in the git commit messages.
  #+begin_src emacs-lisp
- (defun my/org-add-ids-to-headlines-in-file ()
-   "Add ID properties to all headlines in the current file which
- do not already have one."
-   (interactive)
-   (org-map-entries 'org-id-get-create))
- (add-hook 'org-mode-hook
-           (lambda ()
-             (add-hook 'before-save-hook 'my/org-add-ids-to-headlines-in-file nil 'local)))
+   (defvar my-org-add-ids t)
+   (defun my/org-add-ids-to-headlines-in-file ()
+     "Add ID properties to all headlines in the current file which
+   do not already have one."
+     (interactive)
+     (if my-org-add-ids
+         (org-map-entries 'org-id-get-create)))
+   (add-hook 'org-mode-hook
+             (add-hook 'before-save-hook 'my/org-add-ids-to-headlines-in-file nil 'local))
  #+end_src
+ - I'm still testing the conditional behaviour of this.
+ - I would prefer to add the hook only when the file variable is =t=, but that was not working. I don't know if the hooks or the local variables are read first.
 
  Use IDs for links
  #+begin_src emacs-lisp
