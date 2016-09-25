@@ -1100,6 +1100,13 @@ Default method, ssh is faster than scp, [[https://www.emacswiki.org/emacs/TrampM
    (define-key ctl-x-4-map "t" 'toggle-window-split)
  #+end_src
 
+** fullframe
+
+#+begin_src emacs-lisp
+  (require 'fullframe)
+  (fullframe magit-status magit-mode-quit-window nil)
+#+end_src
+
 ** Smoth scrolling
 
 #+begin_src emacs-lisp
