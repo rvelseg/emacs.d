@@ -730,6 +730,8 @@ Don't bookmark remote projects, from [[https://github.com/martinp/emacs.d][marti
            ("\\.chm$" "xchm")
            ("\\.docx?$" "libreoffice")
            ("\\.xslx?$" "libreoffice")
+           ("\\.pptx?$" "libreoffice")
+           ("\\.od[st]$" "libreoffice")
            ("\\.flv$" "mplayer" "totem")
            ("\\.mov$" "mplayer" "totem")
            ("\\.3gp$" "mplayer" "totem")
@@ -737,10 +739,9 @@ Don't bookmark remote projects, from [[https://github.com/martinp/emacs.d][marti
            ("\\.png$" "eog")
            ("\\.jpg$" "eog")
            ("\\.JPG$" "eog")
-           ("\\.pptx?$" "libreoffice")
            ("\\.rar$" "unrar x")
            ("\\.pdf$" "okular" "evince")
-           ("\\.djvu$" "okular" "evince")))
+           ("\\.djvu?$" "okular" "evince")))
  #+end_src
 Issues:
 - When in a remote server, using TRAMP
