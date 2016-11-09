@@ -1254,6 +1254,16 @@ Load
                )))
  #+end_src
 
+ Capture for projectile projects
+#+begin_src emacs-lisp
+  (require 'org-projectile)
+  (setq org-projectile:projects-file
+        "~/personal/org/projectile.org")
+  (add-to-list 'org-capture-templates (org-projectile:project-todo-entry))
+  (setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
+  (global-set-key (kbd "C-c n p") 'org-projectile:project-todo-completing-read)
+#+end_src
+
  Create IDs, [[http://stackoverflow.com/questions/13340616/][ref]], the idea here is to be able to describe code issues in org files, and reference the issue description in the git commit messages.
  #+begin_src emacs-lisp
    (defvar my-org-add-ids t)
