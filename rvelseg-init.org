@@ -729,7 +729,7 @@ Don't bookmark remote projects, from [[https://github.com/martinp/emacs.d][marti
          '(("\\.e?ps$" "okular" "evince")
            ("\\.chm$" "xchm")
            ("\\.docx?$" "libreoffice")
-           ("\\.xslx?$" "libreoffice")
+           ("\\.xlsx?$" "libreoffice")
            ("\\.pptx?$" "libreoffice")
            ("\\.od[stp]$" "libreoffice")
            ("\\.flv$" "mplayer" "totem")
