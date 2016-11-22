@@ -1192,6 +1192,21 @@ Default method, ssh is faster than scp, [[https://www.emacswiki.org/emacs/TrampM
  (setq TeX-source-correlate-method 'SyncTeX)
  #+end_src
 
+** org cdlatex
+
+Load
+#+begin_src emacs-lisp
+  (require 'cdlatex)
+  (add-hook 'cdlatex-mode-hook 'reftex-mode)
+#+end_src
+
+More convenient key binding, for latin american (spanish) keyboard.
+#+begin_src emacs-lisp
+  (add-hook 'cdlatex-mode-hook
+	    (lambda ()
+	    (local-set-key "°" 'cdlatex-math-symbol) ) )
+#+end_src
+
 ** C mode
    :PROPERTIES:
    :ID:       fe75b609-fe44-42b3-a6f4-adcdbe9289ca
