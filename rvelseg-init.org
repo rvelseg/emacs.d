@@ -1192,6 +1192,13 @@ Default method, ssh is faster than scp, [[https://www.emacswiki.org/emacs/TrampM
  (setq TeX-source-correlate-method 'SyncTeX)
  #+end_src
 
+** Python
+
+Even when =PYTHONPATH= exits as an environment variable in the system, Inferior Python does not honors it, then here it is again.
+#+begin_src emacs-lisp
+  (setenv "PYTHONPATH" "/home/ro/local/python_custom_modules")
+#+end_src
+
 ** org cdlatex
 
 Load
