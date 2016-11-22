@@ -1228,6 +1228,12 @@ More convenient key binding, for latin american (spanish) keyboard.
    :ID:       89891905-cbb1-46ee-965b-91b81117c8ea
    :END:
 
+ #+begin_src emacs-lisp
+   (add-to-list 'auto-mode-alist '("\\.cu\\'" . cuda-mode))
+   (add-to-list 'auto-mode-alist '("\\.cuh\\'" . cuda-mode))
+ #+end_src
+ - a way to add multiple elements to the list would be more elegant.
+
 ** org mode
    :PROPERTIES:
    :ID:       0a4e0695-6070-453e-b541-746c77e4633d
