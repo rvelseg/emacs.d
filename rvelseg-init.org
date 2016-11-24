@@ -741,7 +741,8 @@ Don't bookmark remote projects, from [[https://github.com/martinp/emacs.d][marti
            ("\\.JPG$" "eog" "gimp")
            ("\\.rar$" "unrar x")
            ("\\.pdf$" "okular" "evince")
-           ("\\.djvu?$" "okular" "evince")))
+           ("\\.djvu?$" "okular" "evince")
+           ("\\.nii\\.gz$" "fslview")))
  #+end_src
 Issues:
 - When in a remote server, using TRAMP
